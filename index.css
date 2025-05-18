@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  :root {
+    --primary-color: #49cf75;
+    --secondary-color: #162d20;
+    --light-background: #f3fdf7;
+    --light-color: #fff;
+    --text-color: #202020;
+    --light-color-2: #f7f7f7;
+    --font-family: "Manrope", serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: var(--font-family);
+    background: var(--light-color);
+    color: var(--text-color);
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 0 2.5rem;
+    height: 8rem;
+    background-color: var(--light-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-container {
+    width: 8rem;
+  }
+  
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    font-size: 2.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  nav ul li a {
+    font-size: 2rem;
+    font-weight: 700;
+    transition: 0.2s;
+    color: inherit;
+  }
+  
+  nav ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .view-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .view-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  #hero {
+    background-image: url(/images/image1.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 9rem;
+  }
+  
+  .custom-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .marquee-track {
+    display: inline-block;
+    animation: scroll-left 25s linear infinite;
+  }
+  
+  .marquee-track span {
+    display: inline-block;
+    margin-right: 5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  
+  .marquee-track i {
+    margin-right: 0.8rem;
+  }
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .hero-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 3rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  .hero-left {
+    flex: 1 1 500px;
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: var(--secondary-color);
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--light-color);
+  }
+  
+  .hero-des {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: var(--light-color-2);
+  }
+  
+  .search-form form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .search-form input,
+  .search-form select {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.6rem;
+    min-width: 200px;
+    flex: 1;
+  }
+  
+  .hero-features {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    background-color: rgba(255,255,255,0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .feature-item i {
+    color: var(--primary-color);
+  }
+  
+  .feature-item:hover {
+    background-color: var(--light-color-2);
+    color: var(--text-color);
+  }
+  
+  .hero-right {
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-right img {
+    width: 100%;
+    height: auto;
+    clip-path: circle(47.9% at 50% 50%);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      padding: 0 1.5rem;
+    }
+    .hero-left, .hero-right {
+      width: 100%;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+    }
+    .hero-des {
+      font-size: 1.4rem;
+    }
+    .search-form input,
+    .search-form select {
+      font-size: 1.4rem;
+    }
+    .hero-right {
+      display: none; 
+    }
+  }
+  
